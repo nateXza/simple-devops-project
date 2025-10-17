@@ -1,14 +1,14 @@
-# Use official Python image
-FROM python:3.11-slim
+# Use an official Python image as a base
+FROM python:3.9-slim
 
-# Set working directory
+# Set working directory inside container
 WORKDIR /app
 
-# Copy code into container
+# Copy project files into container
 COPY . /app
 
 # Install dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port 5000
 EXPOSE 5000
